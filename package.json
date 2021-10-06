@@ -13,14 +13,13 @@
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-lazy-load": "^3.1.13",
+    "react-helmet": "^6.1.0",
     "react-lazy-load-image-component": "^1.5.1",
     "react-particles-js": "^3.5.3",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
     "styled-components": "^5.3.1",
     "swiper": "^6.6.1",
-    "uselazy": "^5.1.6",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

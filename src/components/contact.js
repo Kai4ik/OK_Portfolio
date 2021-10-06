@@ -14,10 +14,11 @@ const ContactSection = styled.div`
 const ContactTextSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 45%;
   color: #ccd6f6;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
+  padding-left: 5rem;
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -38,8 +39,8 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 60%;
-  padding: 0 5vw;
+  width: 55%;
+  padding: 0 5vw 0 0;
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 0;

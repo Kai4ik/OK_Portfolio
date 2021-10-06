@@ -10,12 +10,27 @@ import AboutMe from "./components/aboutMe";
 import ContactUs from "./components/contact";
 import Footer from "./components/footer";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { Helmet } from "react-helmet";
 
 function App() {
   const width = window.innerWidth;
 
   return (
     <div className="App">
+      <Helmet>
+        <title>
+          Kairat Orozobekov | Full-Stack Developer | Toronto, Canada
+        </title>
+        <meta
+          name="description"
+          content="Kairat Orozobekov - full-stack web developer based in Toronto. Top skills - React, Node.js, JavaScript"
+        />
+        <meta
+          name="keywords"
+          content="HTML5, CSS3, JavaScript, React, Node.js, JavaScript, MongoDB"
+        />
+        <meta name="author" content="Kairat Orozobekov" />
+      </Helmet>
       <Header></Header>
       {width > 768 ? <TopNavigation /> : <BurgerMenu></BurgerMenu>}
       <LeftNavigation />
