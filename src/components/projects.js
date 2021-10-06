@@ -196,7 +196,7 @@ export default function Projects() {
       githubLink: "https://github.com/Kai4ik/Simple_Music_App",
       websiteLink: "https://simple-music-web-app.netlify.app/",
       description:
-        "– is a simple web application build using React and styled-components. The entire project utilized the concept of React Hooks. The app allows users to play track, play next/previous one, or choose a particular track",
+        "Simple web application build using React and styled-components. The entire project utilized the concept of React Hooks. The app allows users to play track, play next/previous one, or choose a particular track",
       technologiesUsed: ["React", "styled-components", "CSS", "HTML5 "],
       imageMobile: sma_mobile,
       imageDesktop: sma_desktop,

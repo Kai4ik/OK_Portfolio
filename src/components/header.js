@@ -12,14 +12,19 @@ const NameTitle = styled.h3`
   font-size: 2.4rem;
   font-weight: 700;
   color: #ccd6f6;
-  margin: 0 5vw;
+  margin: 0 8vw;
   position: absolute;
-  top: 25vh;
-  left: 5vw;
 `;
 
 const Name = styled.div`
   color: #f4b301;
+`;
+
+const MobileFlex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 `;
 
 export default function Header() {
@@ -39,7 +44,7 @@ export default function Header() {
           <canvas className="draw"></canvas>
         </div>
       ) : (
-        <>
+        <MobileFlex>
           <Particles
             height="700px"
             params={{
@@ -84,7 +89,7 @@ export default function Header() {
             Hi, my name is <Name> Kairat Orozobekov.</Name> I'm a full-stack web
             developer
           </NameTitle>
-        </>
+        </MobileFlex>
       )}
     </HeaderSection>
   );

@@ -21,6 +21,7 @@ const ContactTextSection = styled.div`
   padding-left: 5rem;
   @media only screen and (max-width: 768px) {
     width: 100%;
+    padding-left: 0;
   }
 `;
 
