@@ -59,13 +59,16 @@ const SkillIcon = styled.div`
 
 const SkillName = styled.p`
   font-size: 1.4rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export default function Skills() {
   const skillsArray = [
     { image: "devicon-html5-plain-wordmark", name: "HTML5", color: "#E34C26" },
     { image: "devicon-css3-plain", name: "CSS3", color: "#2965F1" },
-    { image: "devicon-javascript-plain", name: "JS", color: "#F0DB4F" },
+    { image: "devicon-javascript-plain", name: "JavaScript", color: "#F0DB4F" },
     { image: "devicon-react-original", name: "React", color: "#61DBFB" },
     { image: "devicon-nodejs-plain", name: "Node.js", color: "#3C873A" },
     { image: "devicon-gatsby-plain", name: "Gatsby", color: "#663399" },

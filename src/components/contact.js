@@ -39,10 +39,10 @@ const ProjectsText = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   width: 55%;
   min-height: 50vh;
-  padding: 0 5vw 0 0;
+  padding: 0 5vw;
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 0;
@@ -54,7 +54,7 @@ const Form = styled.form`
 const FormField = styled.input.attrs({
   type: "text",
 })`
-  width: 70%;
+  width: 80%;
   height: 60px;
   border: 1px solid #f4b301;
   background: none;
@@ -70,7 +70,7 @@ const FormField = styled.input.attrs({
 `;
 
 const Message = styled.textarea`
-  width: 70%;
+  width: 80%;
   height: 150px;
   border: 1px solid #f4b301;
   background: none;
@@ -81,6 +81,24 @@ const Message = styled.textarea`
   resize: none;
   @media only screen and (max-width: 768px) {
     width: 100%;
+  }
+`;
+
+const SubmitBtn = styled.button`
+  margin: 4vh 0;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  color: #f4b301;
+  border: 1px solid #f4b301;
+  border-radius: 6px;
+  padding: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  transition: background 0.2s linear;
+  &:hover {
+    background: rgba(244, 179, 1, 0.5);
   }
 `;
 
@@ -99,6 +117,7 @@ export default function ContactUs() {
         <FormField placeholder="Name" autocomplete="off"></FormField>
         <FormField placeholder="Email" autocomplete="off"></FormField>
         <Message placeholder="Leave your message"></Message>
+        <SubmitBtn> get in touch</SubmitBtn>
       </Form>
     </ContactSection>
   );
