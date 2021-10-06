@@ -24,20 +24,83 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+    />
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        var init = function () {
+          var isMobile =
+            navigator.userAgent &&
+            navigator.userAgent.toLowerCase().indexOf("mobile") >= 0;
+          var isSmall = window.innerWidth < 1000;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+          var ps = new ParticleSlider({
+            ptlGap: isMobile || isSmall ? 3 : 0,
+            ptlSize: isMobile || isSmall ? 3 : 1,
+            width: 1e9,
+            height: 1e9,
+          });
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+          var gui = new dat.GUI();
+          gui
+            .add(ps, "ptlGap")
+            .min(0)
+            .max(5)
+            .step(1)
+            .onChange(function () {
+              ps.init(true);
+            });
+          gui
+            .add(ps, "ptlSize")
+            .min(1)
+            .max(5)
+            .step(1)
+            .onChange(function () {
+              ps.init(true);
+            });
+          gui.add(ps, "restless");
+          gui.addColor(ps, "color").onChange(function (value) {
+            ps.monochrome = true;
+            ps.setColor(value);
+            ps.init(true);
+          });
+
+          window.addEventListener
+            ? window.addEventListener(
+                "click",
+                function () {
+                  ps.init(true);
+                },
+                false
+              )
+            : (window.onclick = function () {
+                ps.init(true);
+              });
+        };
+
+        var initParticleSlider = (function () {
+          var psScript = document.createElement("script");
+          psScript.addEventListener
+            ? psScript.addEventListener("load", init, false)
+            : (psScript.onload = init);
+          psScript.src =
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/ps-0.9.js";
+          psScript.setAttribute("type", "text/javascript");
+          document.body.appendChild(psScript);
+        })(
+          window.addEventListener
+            ? window.addEventListener("load", initParticleSlider, false)
+            : (window.onload = initParticleSlider)
+        );
+      });
+    </script>
   </body>
 </html>
