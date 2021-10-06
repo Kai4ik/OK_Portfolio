@@ -53,8 +53,7 @@ const SkillIcon = styled.div`
     color: ${(props) => props.color};
   }
   @media only screen and (max-width: 768px) {
-    height: 20vh;
-    gap: 0;
+    height: 16vh;
   }
 `;
 

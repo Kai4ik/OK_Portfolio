@@ -20,7 +20,7 @@ const ProjectsSection = styled.div`
   margin: 20vh 10vw 10vh 10vw;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
-    margin: 6vh 10vw 5vh 10vw;
+    margin: 2vh 10vw 5vh 10vw;
   }
 `;
 
