@@ -37,7 +37,7 @@ const SkillsSectionMain = styled.div`
   flex-wrap: wrap;
   gap: 8vw;
   @media only screen and (max-width: 768px) {
-    gap: 5vw;
+    gap: 8vw;
   }
 `;
 

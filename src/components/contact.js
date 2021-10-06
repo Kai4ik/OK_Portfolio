@@ -4,11 +4,10 @@ import styled from "styled-components";
 const ContactSection = styled.div`
   display: flex;
   width: 80vw;
-  min-height: 50vh;
+  min-height: 400px;
   margin: 5vh 10vw;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
-    height: 110vh;
   }
 `;
 
