@@ -113,11 +113,13 @@ export default function ContactUs() {
           hesitate to use the form and I'll try my best to get back to you !
         </ProjectsText>
       </ContactTextSection>
-      <Form>
+      <Form id="contactForm">
         <FormField placeholder="Name" autocomplete="off"></FormField>
         <FormField placeholder="Email" autocomplete="off"></FormField>
         <Message placeholder="Leave your message"></Message>
-        <SubmitBtn> get in touch</SubmitBtn>
+        <SubmitBtn form="contactForm" type="submit">
+          get in touch
+        </SubmitBtn>
       </Form>
     </ContactSection>
   );
