@@ -5,10 +5,8 @@ const ContactSection = styled.div`
   display: flex;
   width: 80vw;
   min-height: 50vh;
-  max-height: 100vh;
   margin: 5vh 10vw;
   @media only screen and (max-width: 768px) {
-    min-height: 80vh;
     flex-direction: column;
   }
 `;

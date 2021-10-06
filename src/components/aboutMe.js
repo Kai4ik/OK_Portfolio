@@ -107,7 +107,7 @@ export default function AboutMe() {
 
   return (
     <AboutSection id="aboutMe">
-      <Link to="work" smooth={true}>
+      <Link to="work" smooth={true} offset={-100}>
         <ViewWork>
           <ViewWorkText> View my work </ViewWorkText>
           <FontAwesomeIcon icon={faArrowRight} />
