@@ -8,6 +8,7 @@ const ContactSection = styled.div`
   margin: 5vh 10vw;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    height: 110vh;
   }
 `;
 

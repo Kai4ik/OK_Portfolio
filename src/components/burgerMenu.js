@@ -76,8 +76,7 @@ const Resume = styled.a`
   color: #f4b301;
   border: 1px solid #f4b301;
   border-radius: 6px;
-  height: 60px;
-  padding: 0 2rem;
+  padding: 0.4rem 2rem;
   margin-top: 4vh;
   text-decoration: none;
 `;
