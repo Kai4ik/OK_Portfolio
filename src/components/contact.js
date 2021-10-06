@@ -57,6 +57,7 @@ const FormField = styled.input.attrs({
   height: 60px;
   border: 1px solid #f4b301;
   background: none;
+  outline: none;
   padding: 0 1rem;
   color: #ccd6f6;
   font-size: 1.4rem;
@@ -72,6 +73,7 @@ const Message = styled.textarea`
   height: 150px;
   border: 1px solid #f4b301;
   background: none;
+  outline: none;
   padding: 1rem;
   color: #ccd6f6;
   font-size: 1.4rem;
@@ -93,8 +95,8 @@ export default function ContactUs() {
         </ProjectsText>
       </ContactTextSection>
       <Form>
-        <FormField placeholder="Name"></FormField>
-        <FormField placeholder="Email"></FormField>
+        <FormField placeholder="Name" autocomplete="off"></FormField>
+        <FormField placeholder="Email" autocomplete="off"></FormField>
         <Message placeholder="Leave your message"></Message>
       </Form>
     </ContactSection>

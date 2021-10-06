@@ -6,6 +6,9 @@ const HeaderSection = styled.section`
   height: 85vh;
   overflow: hidden;
   position: relative;
+  @media only screen and (max-width: 768px) {
+    height: 80vh;
+  }
 `;
 
 const NameTitle = styled.h3`
@@ -24,7 +27,7 @@ const MobileFlex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 85vh;
 `;
 
 export default function Header() {

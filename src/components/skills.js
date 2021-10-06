@@ -7,7 +7,8 @@ const SkillsSection = styled.div`
   margin: 10vh 15vw;
   width: 70vw;
   @media only screen and (max-width: 768px) {
-    margin: 2vh 15vw 10vh 15vw;
+    margin: 2vh 10vw 6vh 10vw;
+    width: 80vw;
   }
 `;
 
@@ -23,6 +24,9 @@ const SkillsParagraph = styled.div`
   font-weight: 300;
   color: #ccd6f6;
   margin: 2vh 0 6vh 0;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const SkillsSectionMain = styled.div`

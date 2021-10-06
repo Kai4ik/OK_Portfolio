@@ -19,12 +19,10 @@ const NavSection = styled.div`
 `;
 
 const LogoSection = styled.div`
-  width: 65%;
   height: 100%;
   z-index: 3;
-  @media only screen and (max-width: 768px) {
-    width: 85%;
-  }
+  width: 95%;
+  margin-left: -5vw;
 `;
 
 const Logo = styled.img`
@@ -71,7 +69,6 @@ const MenuOption = styled.div`
   color: #ccd6f6;
   margin-bottom: 2vh;
   cursor: pointer;
-  outline: none;
 `;
 
 const Resume = styled.a`
