@@ -4,7 +4,8 @@ import styled from "styled-components";
 const ContactSection = styled.div`
   display: flex;
   width: 80vw;
-  min-height: 400px;
+  min-height: 50vh;
+  max-height: 100vh;
   margin: 5vh 10vw;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
