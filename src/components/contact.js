@@ -114,6 +114,10 @@ export default function ContactUs() {
     setUserData(newUser);
   };
 
+  const scroll = (e) => {
+    document.getElementById(e.target.id).scrollIntoView();
+  };
+
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -126,6 +130,7 @@ export default function ContactUs() {
       </ContactTextSection>
       <Form id="contactForm" method="POST">
         <FormField
+          id="fullName"
           inputType="text"
           name="fullName"
           value={userData.fullName}
@@ -134,8 +139,10 @@ export default function ContactUs() {
           autocomplete="off"
           tabIndex="1"
           required
+          onFocus={scroll}
         ></FormField>
         <FormField
+          id="email"
           inputType="email"
           name="email"
           value={userData.email}
@@ -144,12 +151,15 @@ export default function ContactUs() {
           autocomplete="off"
           tabIndex="2"
           required
+          onFocus={scroll}
         ></FormField>
         <Message
+          id="message"
           name="message"
           value={userData.message}
           placeholder="Leave your message"
           tabIndex="3"
+          onFocus={scroll}
         ></Message>
         <SubmitBtn form="contactForm" type="submit">
           get in touch
