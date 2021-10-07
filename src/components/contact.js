@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const ContactSection = styled.div`
@@ -51,9 +51,9 @@ const Form = styled.form`
   }
 `;
 
-const FormField = styled.input.attrs({
-  type: "text",
-})`
+const FormField = styled.input.attrs((props) => ({
+  type: props.inputType,
+}))`
   width: 80%;
   height: 60px;
   border: 1px solid #f4b301;
@@ -103,6 +103,17 @@ const SubmitBtn = styled.button`
 `;
 
 export default function ContactUs() {
+  const [userData, setUserData] = useState({
+    email: "",
+    fullName: "",
+    message: "",
+  });
+  const handleChange = (event) => {
+    let newUser = { ...userData };
+    newUser[event.target.name] = event.target.value;
+    setUserData(newUser);
+  };
+
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -113,10 +124,33 @@ export default function ContactUs() {
           hesitate to use the form and I'll try my best to get back to you !
         </ProjectsText>
       </ContactTextSection>
-      <Form id="contactForm">
-        <FormField placeholder="Name" autocomplete="off"></FormField>
-        <FormField placeholder="Email" autocomplete="off"></FormField>
-        <Message placeholder="Leave your message"></Message>
+      <Form id="contactForm" method="POST">
+        <FormField
+          inputType="text"
+          name="fullName"
+          value={userData.fullName}
+          onChange={handleChange}
+          placeholder="Name"
+          autocomplete="off"
+          tabIndex="1"
+          required
+        ></FormField>
+        <FormField
+          inputType="email"
+          name="email"
+          value={userData.email}
+          onChange={handleChange}
+          placeholder="Email"
+          autocomplete="off"
+          tabIndex="2"
+          required
+        ></FormField>
+        <Message
+          name="message"
+          value={userData.message}
+          placeholder="Leave your message"
+          tabIndex="3"
+        ></Message>
         <SubmitBtn form="contactForm" type="submit">
           get in touch
         </SubmitBtn>
