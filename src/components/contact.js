@@ -48,6 +48,9 @@ const Form = styled.form`
     padding: 0;
     align-items: center;
     margin-top: 5vh;
+    &:focus-within {
+      height: 100vh;
+    }
   }
 `;
 
