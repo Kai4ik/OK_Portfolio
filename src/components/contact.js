@@ -114,6 +114,11 @@ const SubmitBtn = styled.button`
   &:disabled:hover {
     background: rgba(237, 41, 57, 0.5);
   }
+  @media only screen and (max-width: 768px) {
+    &:hover {
+      background: transparent;
+    }
+  }
 `;
 
 export default function ContactUs() {

@@ -136,6 +136,10 @@ const LinkBtn = styled.a`
     width: 35vw;
     text-align: center;
     padding: 1.5rem 1rem;
+    &:hover {
+      background: #f4b301;
+      color: #101820ff;
+    }
   }
 `;
 
