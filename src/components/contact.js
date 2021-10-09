@@ -171,7 +171,7 @@ export default function ContactUs() {
           handleForm();
         }}
       >
-        <Link to="fullNameInput" smooth={true} offset={-100} width="80%">
+        <Link to="fullNameInput" smooth={true} offset={200}>
           <FormField
             id="fullNameInput"
             inputType="text"
@@ -184,7 +184,7 @@ export default function ContactUs() {
             autoComplete="off"
           ></FormField>
         </Link>
-        <Link to="emailInput" smooth={true} offset={-100}>
+        <Link to="emailInput" smooth={true} offset={200}>
           <FormField
             id="emailInput"
             inputType="email"
@@ -197,7 +197,7 @@ export default function ContactUs() {
             autoComplete="off"
           ></FormField>
         </Link>
-        <Link to="emailInput" smooth={true} offset={-100}>
+        <Link to="emailInput" smooth={true} offset={200}>
           <Message
             name="message"
             value={userData.message}
