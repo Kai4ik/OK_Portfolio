@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useForm } from "@formspree/react";
 //import * as Scroll from "react-scroll";
-import $ from "jquery";
+//import $ from "jquery";
 
 const ContactSection = styled.div`
   display: flex;
@@ -142,7 +142,6 @@ export default function ContactUs() {
     message: "",
   });
   //const scroll = Scroll.animateScroll;
-  //const scroller = Scroll.scroller;
   //const width = window.innerWidth;
 
   const handleChange = (event) => {
@@ -167,18 +166,9 @@ export default function ContactUs() {
     );
   }, [userData]);
 
-  let saveScrollLeft = null,
-    blurTimeoutId = null;
-
-  const focus = () => {
-    clearTimeout(blurTimeoutId);
-    saveScrollLeft = $("body").scrollLeft();
-  };
-
-  const blur = () => {
-    blurTimeoutId = setTimeout(function () {
-      $(window).scrollLeft(saveScrollLeft);
-    }, 1000);
+  const focus = (e) => {
+    e.preventDefault();
+    e.target.focus({ preventScroll: true });
   };
 
   return (
@@ -208,8 +198,7 @@ export default function ContactUs() {
           placeholder="Name"
           required
           autoComplete="off"
-          onFocus={() => focus()}
-          onBlur={() => blur()}
+          onFocus={(e) => focus(e)}
         ></FormField>
         <FormField
           inputType="email"
@@ -220,8 +209,7 @@ export default function ContactUs() {
           placeholder="Email"
           required
           autoComplete="off"
-          onFocus={() => focus()}
-          onBlur={() => blur()}
+          onFocus={(e) => focus(e)}
         ></FormField>
         <Message
           name="message"
@@ -229,8 +217,7 @@ export default function ContactUs() {
           onChange={handleChange}
           id="messageID"
           placeholder="Leave your message"
-          onFocus={() => focus()}
-          onBlur={() => blur()}
+          onFocus={(e) => focus(e)}
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
