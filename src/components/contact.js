@@ -182,9 +182,9 @@ export default function ContactUs() {
           placeholder="Name"
           required
           autoComplete="off"
-          onFocusCapture={() =>
+          onFocus={() =>
             width < 768 &&
-            scroller.scrollTo("nameID", { smooth: true, offset: -300 })
+            scroller.scrollTo("nameID", { smooth: true, offset: -250 })
           }
           onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></FormField>
@@ -197,9 +197,9 @@ export default function ContactUs() {
           placeholder="Email"
           required
           autoComplete="off"
-          onFocusCapture={() =>
+          onFocus={() =>
             width < 768 &&
-            scroller.scrollTo("emailID", { smooth: true, offset: -200 })
+            scroller.scrollTo("emailID", { smooth: true, offset: -250 })
           }
           onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></FormField>
@@ -209,9 +209,9 @@ export default function ContactUs() {
           onChange={handleChange}
           id="messageID"
           placeholder="Leave your message"
-          onFocusCapture={() =>
+          onFocus={() =>
             width < 768 &&
-            scroller.scrollTo("messageID", { smooth: true, offset: -200 })
+            scroller.scrollTo("messageID", { smooth: true, offset: -250 })
           }
           onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></Message>
