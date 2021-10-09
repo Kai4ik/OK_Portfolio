@@ -153,7 +153,7 @@ export default function ContactUs() {
   };
 
   const myRef = useRef(null);
-  const executeScroll = () => myRef.current.scrollIntoView();
+  const executeScroll = () => window.scrollTo(0, myRef.current.offsetTop);
 
   return (
     <ContactSection id="contact">
