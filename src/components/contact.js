@@ -153,10 +153,14 @@ export default function ContactUs() {
     scroll.scrollMore(width > 768 ? 0 : 400);
   };
 
-  $('input').on('focus', function () {
-    $('html, body').animate({
-        scrollTop: $(this).offset().top + 'px'
-    }, 'fast');
+  $("input").on("focus", function () {
+    $("html, body").animate(
+      {
+        scrollTop: $(this).offset().top + "px",
+      },
+      "fast"
+    );
+  });
 
   return (
     <ContactSection id="contact">
