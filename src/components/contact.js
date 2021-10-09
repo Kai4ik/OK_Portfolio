@@ -124,6 +124,7 @@ export default function ContactUs() {
   });
 
   const handleChange = (event) => {
+    console.log(state);
     let newUser = { ...userData };
     newUser[event.target.name] = event.target.value;
     setUserData(newUser);
