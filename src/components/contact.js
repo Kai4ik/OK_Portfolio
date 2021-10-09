@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useForm } from "@formspree/react";
-//import * as Scroll from "react-scroll";
-//import $ from "jquery";
 
 const ContactSection = styled.div`
   display: flex;
@@ -39,15 +37,6 @@ const ProjectsText = styled.div`
   font-size: 1.3rem;
 `;
 
-const fadeInKeyframes = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -55,19 +44,15 @@ const Form = styled.form`
   width: 55%;
   min-height: 50vh;
   padding: 0 5vw;
-  animation-name: ${fadeInKeyframes};
-  animation-duration: 0.1s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
   animation-play-state: running;
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 0;
     align-items: center;
     margin-top: 5vh;
+    &:focus-within {
+      margin-top: 300px;
+    }
   }
 `;
 
@@ -141,8 +126,6 @@ export default function ContactUs() {
     fullName: "",
     message: "",
   });
-  //const scroll = Scroll.animateScroll;
-  //const width = window.innerWidth;
 
   const handleChange = (event) => {
     console.log(state);
@@ -165,11 +148,6 @@ export default function ContactUs() {
       userData.email !== "" && userData.fullName !== "" ? false : true
     );
   }, [userData]);
-
-  const focus = (e) => {
-    e.preventDefault();
-    e.target.focus({ preventScroll: true });
-  };
 
   return (
     <ContactSection id="contact">
@@ -198,7 +176,6 @@ export default function ContactUs() {
           placeholder="Name"
           required
           autoComplete="off"
-          onFocus={(e) => focus(e)}
         ></FormField>
         <FormField
           inputType="email"
@@ -209,7 +186,6 @@ export default function ContactUs() {
           placeholder="Email"
           required
           autoComplete="off"
-          onFocus={(e) => focus(e)}
         ></FormField>
         <Message
           name="message"
@@ -217,7 +193,6 @@ export default function ContactUs() {
           onChange={handleChange}
           id="messageID"
           placeholder="Leave your message"
-          onFocus={(e) => focus(e)}
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
