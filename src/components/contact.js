@@ -155,10 +155,6 @@ export default function ContactUs() {
     );
   }, [userData]);
 
-  const scrollToNext = () => {
-    scroll.scrollMore(width > 768 ? 0 : 400);
-  };
-
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -190,7 +186,7 @@ export default function ContactUs() {
             width < 768 &&
             scroller.scrollTo("nameID", { smooth: true, offset: -300 })
           }
-          onBlur={scrollToNext}
+          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 300)}
         ></FormField>
         <FormField
           inputType="email"
@@ -205,7 +201,7 @@ export default function ContactUs() {
             width < 768 &&
             scroller.scrollTo("emailID", { smooth: true, offset: -200 })
           }
-          onBlur={scrollToNext}
+          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 400)}
         ></FormField>
         <Message
           name="message"
@@ -217,7 +213,7 @@ export default function ContactUs() {
             width < 768 &&
             scroller.scrollTo("messageID", { smooth: true, offset: -200 })
           }
-          onBlur={scrollToNext}
+          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
