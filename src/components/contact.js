@@ -179,7 +179,10 @@ export default function ContactUs() {
           onChange={handleChange}
           placeholder="Name"
           onFocus={() =>
-            scroller.scrollTo("nameID", { smooth: true, offset: -200 })
+            setTimeout(
+              scroller.scrollTo("nameID", { smooth: true, offset: -200 }),
+              2000
+            )
           }
           onBlur={scrollToNext}
           required
@@ -193,7 +196,10 @@ export default function ContactUs() {
           onChange={handleChange}
           placeholder="Email"
           onFocus={() =>
-            scroller.scrollTo("emailID", { smooth: true, offset: -200 })
+            setTimeout(
+              scroller.scrollTo("emailID", { smooth: true, offset: -200 }),
+              2000
+            )
           }
           onBlur={scrollToNext}
           required
@@ -205,7 +211,10 @@ export default function ContactUs() {
           onChange={handleChange}
           id="messageID"
           onFocus={() =>
-            scroller.scrollTo("messageID", { smooth: true, offset: -200 })
+            setTimeout(
+              scroller.scrollTo("messageID", { smooth: true, offset: -200 }),
+              2000
+            )
           }
           onBlur={scrollToNext}
           placeholder="Leave your message"
