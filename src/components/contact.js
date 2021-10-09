@@ -153,10 +153,6 @@ export default function ContactUs() {
     scroll.scrollMore(width > 768 ? 0 : 400);
   };
 
-  $("input").on("focus", function () {
-    $(window).scrollTop(this.getBoundingClientRect().top - 10);
-  });
-
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -181,6 +177,12 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
+          onFocus={() =>
+            $("html, body").animate(
+              { scrollTop: $("input, textarea").offset().top - 10 },
+              1
+            )
+          }
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -191,6 +193,12 @@ export default function ContactUs() {
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
+          onFocus={() =>
+            $("html, body").animate(
+              { scrollTop: $("input, textarea").offset().top - 10 },
+              1
+            )
+          }
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -199,6 +207,12 @@ export default function ContactUs() {
           name="message"
           value={userData.message}
           onChange={handleChange}
+          onFocus={() =>
+            $("html, body").animate(
+              { scrollTop: $("input, textarea").offset().top - 10 },
+              1
+            )
+          }
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
