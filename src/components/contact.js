@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
 import * as Scroll from "react-scroll";
@@ -124,6 +124,7 @@ export default function ContactUs() {
     message: "",
   });
   const scroll = Scroll.animateScroll;
+  const scroller = Scroll.scroller;
   const width = window.innerWidth;
 
   const handleChange = (event) => {
@@ -152,9 +153,6 @@ export default function ContactUs() {
     scroll.scrollMore(width > 768 ? 0 : 400);
   };
 
-  const myRef = useRef(null);
-  const executeScroll = () => window.scrollTo(0, myRef.current.offsetTop);
-
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -176,22 +174,27 @@ export default function ContactUs() {
         <FormField
           inputType="text"
           name="fullName"
+          id="nameID"
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onFocus={() => executeScroll()}
+          onFocus={() =>
+            scroller.scrollTo("nameID", { smooth: true, offset: -400 })
+          }
           onBlur={scrollToNext}
           required
           autoComplete="off"
         ></FormField>
         <FormField
           inputType="email"
-          ref={myRef}
           name="email"
+          id="emailID"
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onFocus={() => executeScroll()}
+          onFocus={() =>
+            scroller.scrollTo("emailID", { smooth: true, offset: -400 })
+          }
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -200,7 +203,10 @@ export default function ContactUs() {
           name="message"
           value={userData.message}
           onChange={handleChange}
-          onFocus={() => executeScroll()}
+          id="messageID"
+          onFocus={() =>
+            scroller.scrollTo("messageID", { smooth: true, offset: -400 })
+          }
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
