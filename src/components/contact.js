@@ -178,7 +178,6 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onFocus={(e) => e.preventDefault()}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -190,7 +189,6 @@ export default function ContactUs() {
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onFocus={(e) => e.preventDefault()}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -200,7 +198,6 @@ export default function ContactUs() {
           value={userData.message}
           onChange={handleChange}
           id="messageID"
-          onFocus={(e) => e.preventDefault()}
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
