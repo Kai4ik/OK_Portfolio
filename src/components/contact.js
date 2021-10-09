@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useForm } from "@formspree/react";
-import * as Scroll from "react-scroll";
+//import * as Scroll from "react-scroll";
 import $ from "jquery";
 
 const ContactSection = styled.div`
@@ -141,9 +141,9 @@ export default function ContactUs() {
     fullName: "",
     message: "",
   });
-  const scroll = Scroll.animateScroll;
+  //const scroll = Scroll.animateScroll;
   //const scroller = Scroll.scroller;
-  const width = window.innerWidth;
+  //const width = window.innerWidth;
 
   const handleChange = (event) => {
     console.log(state);
@@ -167,13 +167,19 @@ export default function ContactUs() {
     );
   }, [userData]);
 
-  const scrollToNext = () => {
-    scroll.scrollMore(width > 768 ? 0 : 400);
+  let saveScrollLeft = null,
+    blurTimeoutId = null;
+
+  const focus = () => {
+    clearTimeout(blurTimeoutId);
+    saveScrollLeft = $("body").scrollLeft();
   };
 
-  $("body").bind("focusin focus", function (e) {
-    e.preventDefault();
-  });
+  const blur = () => {
+    blurTimeoutId = setTimeout(function () {
+      $(window).scrollLeft(saveScrollLeft);
+    }, 1000);
+  };
 
   return (
     <ContactSection id="contact">
@@ -200,9 +206,10 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onBlur={scrollToNext}
           required
           autoComplete="off"
+          onFocus={() => focus()}
+          onBlur={() => blur()}
         ></FormField>
         <FormField
           inputType="email"
@@ -211,17 +218,19 @@ export default function ContactUs() {
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onBlur={scrollToNext}
           required
           autoComplete="off"
+          onFocus={() => focus()}
+          onBlur={() => blur()}
         ></FormField>
         <Message
           name="message"
           value={userData.message}
           onChange={handleChange}
           id="messageID"
-          onBlur={scrollToNext}
           placeholder="Leave your message"
+          onFocus={() => focus()}
+          onBlur={() => blur()}
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
