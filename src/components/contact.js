@@ -56,7 +56,7 @@ const Form = styled.form`
 const FormField = styled.input.attrs((props) => ({
   type: props.inputType,
 }))`
-  width: 80%;
+  width: 120%;
   height: 60px;
   border: 1px solid #f4b301;
   background: none;
@@ -76,7 +76,7 @@ const FormField = styled.input.attrs((props) => ({
 `;
 
 const Message = styled.textarea`
-  width: 80%;
+  width: 120%;
   height: 150px;
   border: 1px solid #f4b301;
   background: none;
@@ -124,6 +124,7 @@ export default function ContactUs() {
     message: "",
   });
   const scroll = Scroll.animateScroll;
+  const Link = Scroll.Link;
   const width = window.innerWidth;
 
   const handleChange = (event) => {
@@ -170,36 +171,41 @@ export default function ContactUs() {
           handleForm();
         }}
       >
-        <FormField
-          inputType="text"
-          name="fullName"
-          value={userData.fullName}
-          onChange={handleChange}
-          placeholder="Name"
-          onFocus={() => scroll.scrollMore(200)}
-          onBlur={scrollToNext}
-          required
-          autoComplete="off"
-        ></FormField>
-        <FormField
-          inputType="email"
-          name="email"
-          value={userData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          onFocus={() => scroll.scrollMore(250)}
-          onBlur={scrollToNext}
-          required
-          autoComplete="off"
-        ></FormField>
-        <Message
-          name="message"
-          value={userData.message}
-          onChange={handleChange}
-          onFocus={() => scroll.scrollMore(300)}
-          onBlur={scrollToNext}
-          placeholder="Leave your message"
-        ></Message>
+        <Link to="fullNameInput" smooth={true} offset={-100} width="80%">
+          <FormField
+            id="fullNameInput"
+            inputType="text"
+            name="fullName"
+            value={userData.fullName}
+            onChange={handleChange}
+            placeholder="Name"
+            onBlur={scrollToNext}
+            required
+            autoComplete="off"
+          ></FormField>
+        </Link>
+        <Link to="emailInput" smooth={true} offset={-100}>
+          <FormField
+            id="emailInput"
+            inputType="email"
+            name="email"
+            value={userData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            onBlur={scrollToNext}
+            required
+            autoComplete="off"
+          ></FormField>
+        </Link>
+        <Link to="emailInput" smooth={true} offset={-100}>
+          <Message
+            name="message"
+            value={userData.message}
+            onChange={handleChange}
+            onBlur={scrollToNext}
+            placeholder="Leave your message"
+          ></Message>
+        </Link>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
         </SubmitBtn>
