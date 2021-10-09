@@ -124,7 +124,7 @@ export default function ContactUs() {
     message: "",
   });
   const scroll = Scroll.animateScroll;
-  const scroller = Scroll.scroller;
+  //const scroller = Scroll.scroller;
   const width = window.innerWidth;
 
   const handleChange = (event) => {
