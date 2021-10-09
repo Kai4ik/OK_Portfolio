@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
 import * as Scroll from "react-scroll";
+import $ from "jquery";
 
 const ContactSection = styled.div`
   display: flex;
@@ -172,35 +173,32 @@ export default function ContactUs() {
         }}
       >
         <FormField
-          id="fullNameID"
           inputType="text"
           name="fullName"
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onFocus={() => scroller.scrollTo("fullNameID", { smooth: true })}
+          onFocus={() => (document.body.scrollTop = $(this).offset().top)}
           onBlur={scrollToNext}
           required
           autoComplete="off"
         ></FormField>
         <FormField
-          id="emailID"
           inputType="email"
           name="email"
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onFocus={() => scroller.scrollTo("emailID", { smooth: true })}
+          onFocus={() => (document.body.scrollTop = $(this).offset().top)}
           onBlur={scrollToNext}
           required
           autoComplete="off"
         ></FormField>
         <Message
-          id="messageID"
           name="message"
           value={userData.message}
           onChange={handleChange}
-          onFocus={() => scroller.scrollTo("messageID", { smooth: true })}
+          onFocus={() => (document.body.scrollTop = $(this).offset().top)}
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
