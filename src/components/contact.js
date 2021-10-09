@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
+import * as Scroll from "react-scroll";
 
 const ContactSection = styled.div`
   display: flex;
@@ -50,9 +51,6 @@ const Form = styled.form`
     padding: 0;
     align-items: center;
     margin-top: 5vh;
-    &:focus-within {
-      margin-top: 300px;
-    }
   }
 `;
 
@@ -126,6 +124,9 @@ export default function ContactUs() {
     fullName: "",
     message: "",
   });
+  const scroll = Scroll.animateScroll;
+  const scroller = Scroll.scroller;
+  const width = window.innerWidth;
 
   const handleChange = (event) => {
     console.log(state);
@@ -148,6 +149,10 @@ export default function ContactUs() {
       userData.email !== "" && userData.fullName !== "" ? false : true
     );
   }, [userData]);
+
+  const scrollToNext = () => {
+    scroll.scrollMore(width > 768 ? 0 : 400);
+  };
 
   return (
     <ContactSection id="contact">
@@ -176,6 +181,11 @@ export default function ContactUs() {
           placeholder="Name"
           required
           autoComplete="off"
+          onFocusCapture={() =>
+            width < 768 &&
+            scroller.scrollTo("nameID", { smooth: true, offset: -300 })
+          }
+          onBlur={scrollToNext}
         ></FormField>
         <FormField
           inputType="email"
@@ -186,6 +196,11 @@ export default function ContactUs() {
           placeholder="Email"
           required
           autoComplete="off"
+          onFocusCapture={() =>
+            width < 768 &&
+            scroller.scrollTo("emailID", { smooth: true, offset: -200 })
+          }
+          onBlur={scrollToNext}
         ></FormField>
         <Message
           name="message"
@@ -193,6 +208,11 @@ export default function ContactUs() {
           onChange={handleChange}
           id="messageID"
           placeholder="Leave your message"
+          onFocusCapture={() =>
+            width < 768 &&
+            scroller.scrollTo("messageID", { smooth: true, offset: -200 })
+          }
+          onBlur={scrollToNext}
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
