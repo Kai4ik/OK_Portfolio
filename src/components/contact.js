@@ -186,7 +186,7 @@ export default function ContactUs() {
             width < 768 &&
             scroller.scrollTo("nameID", { smooth: true, offset: -300 })
           }
-          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 300)}
+          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></FormField>
         <FormField
           inputType="email"
@@ -201,7 +201,7 @@ export default function ContactUs() {
             width < 768 &&
             scroller.scrollTo("emailID", { smooth: true, offset: -200 })
           }
-          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 400)}
+          onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></FormField>
         <Message
           name="message"
