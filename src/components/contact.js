@@ -43,7 +43,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   width: 55%;
-  height: 60vh;
+  min-height: 50vh;
   padding: 0 5vw;
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -117,13 +117,14 @@ const SubmitBtn = styled.button`
 
 export default function ContactUs() {
   const [state, handleSubmit] = useForm("mknkeyaj");
-  const scroll = Scroll.animateScroll;
   const [disabled, setDisabled] = useState(true);
   const [userData, setUserData] = useState({
     email: "",
     fullName: "",
     message: "",
   });
+  const scroll = Scroll.animateScroll;
+  const width = window.innerWidth;
 
   const handleChange = (event) => {
     console.log(state);
@@ -148,7 +149,7 @@ export default function ContactUs() {
   }, [userData]);
 
   const scrollToNext = () => {
-    scroll.scrollMore(100);
+    scroll.scrollMore(width > 768 ? 0 : 400);
   };
 
   return (
