@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
+import * as Scroll from "react-scroll";
 
 const ContactSection = styled.div`
   display: flex;
@@ -116,6 +117,7 @@ const SubmitBtn = styled.button`
 
 export default function ContactUs() {
   const [state, handleSubmit] = useForm("mknkeyaj");
+  const scroll = Scroll.animateScroll;
   const [disabled, setDisabled] = useState(true);
   const [userData, setUserData] = useState({
     email: "",
@@ -145,6 +147,10 @@ export default function ContactUs() {
     );
   }, [userData]);
 
+  const scrollToNext = () => {
+    scroll.scrollMore(100);
+  };
+
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -169,7 +175,7 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          autocomplete="off"
+          onBlur={scrollToNext}
           required
         ></FormField>
         <FormField
@@ -178,13 +184,14 @@ export default function ContactUs() {
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          autocomplete="off"
+          onBlur={scrollToNext}
           required
         ></FormField>
         <Message
           name="message"
           value={userData.message}
           onChange={handleChange}
+          onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
