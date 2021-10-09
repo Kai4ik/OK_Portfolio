@@ -130,7 +130,7 @@ export default function ContactUs() {
     message: "",
   });
   const scroll = Scroll.animateScroll;
-  const scroller = Scroll.scroller;
+
   const width = window.innerWidth;
 
   const handleChange = (event) => {
@@ -182,10 +182,6 @@ export default function ContactUs() {
           placeholder="Name"
           required
           autoComplete="off"
-          onFocus={() =>
-            width < 768 &&
-            scroller.scrollTo("nameID", { smooth: true, offset: -250 })
-          }
           onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></FormField>
         <FormField
@@ -197,10 +193,6 @@ export default function ContactUs() {
           placeholder="Email"
           required
           autoComplete="off"
-          onFocus={() =>
-            width < 768 &&
-            scroller.scrollTo("emailID", { smooth: true, offset: -250 })
-          }
           onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></FormField>
         <Message
@@ -209,10 +201,6 @@ export default function ContactUs() {
           onChange={handleChange}
           id="messageID"
           placeholder="Leave your message"
-          onFocus={() =>
-            width < 768 &&
-            scroller.scrollTo("messageID", { smooth: true, offset: -250 })
-          }
           onBlur={() => scroll.scrollMore(width > 768 ? 0 : 600)}
         ></Message>
         <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
