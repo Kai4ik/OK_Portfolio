@@ -178,10 +178,7 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onFocus={() =>
-            width < 768 &&
-            scroller.scrollTo("nameID", { smooth: true, offset: -200 })
-          }
+          onFocus={(e) => e.preventDefault()}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -193,10 +190,7 @@ export default function ContactUs() {
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onFocus={() =>
-            width < 768 &&
-            scroller.scrollTo("emailID", { smooth: true, offset: -200 })
-          }
+          onFocus={(e) => e.preventDefault()}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -206,10 +200,7 @@ export default function ContactUs() {
           value={userData.message}
           onChange={handleChange}
           id="messageID"
-          onFocus={() =>
-            width < 768 &&
-            scroller.scrollTo("messageID", { smooth: true, offset: -200 })
-          }
+          onFocus={(e) => e.preventDefault()}
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>

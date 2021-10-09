@@ -117,7 +117,7 @@ const LinkBtn = styled.a`
   background: #f4b301;
   color: #101820ff;
   border: none;
-  border-radius: 20px;
+  border-radius: 6px;
   height: 38px;
   width: 10vw;
   padding: 0 1rem;

@@ -18,8 +18,9 @@ const ViewWork = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 190px;
   border: 1px solid #ccd6f6;
+  border-radius: 6px;
   height: 50px;
   background: transparent;
   margin-bottom: 100px;

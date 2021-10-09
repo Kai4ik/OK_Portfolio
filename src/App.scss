@@ -57,3 +57,11 @@ p {
 .swiper-pagination-bullet-active {
   background-color: #f4b301 !important;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ccd6f6;
+  transition: background-color 5000s ease-in-out 0s;
+}
