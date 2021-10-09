@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
 import * as Scroll from "react-scroll";
-import $ from "jquery";
 
 const ContactSection = styled.div`
   display: flex;
