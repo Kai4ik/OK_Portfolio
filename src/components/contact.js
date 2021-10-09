@@ -51,6 +51,9 @@ const Form = styled.form`
     align-items: center;
     margin-top: 5vh;
   }
+  &:focus-within {
+    position: fixed;
+  }
 `;
 
 const FormField = styled.input.attrs((props) => ({
