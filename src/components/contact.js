@@ -125,6 +125,7 @@ export default function ContactUs() {
   });
   const scroll = Scroll.animateScroll;
   const width = window.innerWidth;
+  const scroller = Scroll.scroller;
 
   const handleChange = (event) => {
     console.log(state);
@@ -171,27 +172,35 @@ export default function ContactUs() {
         }}
       >
         <FormField
+          id="fullNameID"
           inputType="text"
           name="fullName"
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
+          onFocus={() => scroller.scrollTo("fullNameID", { smooth: true })}
           onBlur={scrollToNext}
           required
+          autoComplete="off"
         ></FormField>
         <FormField
+          id="emailID"
           inputType="email"
           name="email"
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
+          onFocus={() => scroller.scrollTo("emailID", { smooth: true })}
           onBlur={scrollToNext}
           required
+          autoComplete="off"
         ></FormField>
         <Message
+          id="messageID"
           name="message"
           value={userData.message}
           onChange={handleChange}
+          onFocus={() => scroller.scrollTo("messageID", { smooth: true })}
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
