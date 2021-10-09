@@ -126,7 +126,6 @@ export default function ContactUs() {
   });
   const scroll = Scroll.animateScroll;
   const width = window.innerWidth;
-  const scroller = Scroll.scroller;
 
   const handleChange = (event) => {
     console.log(state);
