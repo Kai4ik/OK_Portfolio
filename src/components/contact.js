@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
 import * as Scroll from "react-scroll";
+import $ from "jquery";
 
 const ContactSection = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   width: 55%;
-  height: 450px;
+  min-height: 50vh;
   padding: 0 5vw;
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -151,6 +152,11 @@ export default function ContactUs() {
   const scrollToNext = () => {
     scroll.scrollMore(width > 768 ? 0 : 400);
   };
+
+  $('input').on('focus', function () {
+    $('html, body').animate({
+        scrollTop: $(this).offset().top + 'px'
+    }, 'fast');
 
   return (
     <ContactSection id="contact">
