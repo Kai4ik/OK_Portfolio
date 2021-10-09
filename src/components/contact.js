@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useForm } from "@formspree/react";
 import * as Scroll from "react-scroll";
-import $ from "jquery";
 
 const ContactSection = styled.div`
   display: flex;
@@ -153,6 +152,9 @@ export default function ContactUs() {
     scroll.scrollMore(width > 768 ? 0 : 400);
   };
 
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollIntoView();
+
   return (
     <ContactSection id="contact">
       <ContactTextSection>
@@ -177,28 +179,19 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onFocus={() =>
-            $("html, body").animate(
-              { scrollTop: $("input, textarea").offset().top - 10 },
-              1
-            )
-          }
+          onFocus={() => executeScroll()}
           onBlur={scrollToNext}
           required
           autoComplete="off"
         ></FormField>
         <FormField
           inputType="email"
+          ref={myRef}
           name="email"
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onFocus={() =>
-            $("html, body").animate(
-              { scrollTop: $("input, textarea").offset().top - 10 },
-              1
-            )
-          }
+          onFocus={() => executeScroll()}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -207,12 +200,7 @@ export default function ContactUs() {
           name="message"
           value={userData.message}
           onChange={handleChange}
-          onFocus={() =>
-            $("html, body").animate(
-              { scrollTop: $("input, textarea").offset().top - 10 },
-              1
-            )
-          }
+          onFocus={() => executeScroll()}
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
