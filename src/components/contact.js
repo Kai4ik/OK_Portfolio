@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useForm } from "@formspree/react";
 
 const ContactSection = styled.div`
   display: flex;
@@ -41,7 +42,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   width: 55%;
-  min-height: 50vh;
+  height: 60vh;
   padding: 0 5vw;
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -60,10 +61,14 @@ const FormField = styled.input.attrs((props) => ({
   background: none;
   outline: none;
   padding: 0 1rem;
-  color: #ccd6f6;
+  color: #ccd6f6 !important;
   font-size: 1.4rem;
   margin-bottom: 4vh;
   transition: border 0.5s linear;
+  &:focus,
+  &:active {
+    border: 1px solid #ccd6f6;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -79,6 +84,10 @@ const Message = styled.textarea`
   color: #ccd6f6;
   font-size: 1.4rem;
   resize: none;
+  &:focus,
+  &:active {
+    border: 1px solid #ccd6f6;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -97,26 +106,43 @@ const SubmitBtn = styled.button`
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
   transition: background 0.2s linear;
-  &:hover {
+  &:enabled:hover {
     background: rgba(244, 179, 1, 0.5);
+  }
+  &:disabled:hover {
+    background: rgba(237, 41, 57, 0.5);
   }
 `;
 
 export default function ContactUs() {
+  const [state, handleSubmit] = useForm("mknkeyaj");
+  const [disabled, setDisabled] = useState(true);
   const [userData, setUserData] = useState({
     email: "",
     fullName: "",
     message: "",
   });
+
   const handleChange = (event) => {
     let newUser = { ...userData };
     newUser[event.target.name] = event.target.value;
     setUserData(newUser);
   };
 
-  const scroll = (e) => {
-    document.getElementById(e.target.id).scrollIntoView();
+  const handleForm = () => {
+    const newUser = {
+      email: "",
+      fullName: "",
+      message: "",
+    };
+    setUserData(newUser);
   };
+
+  useEffect(() => {
+    setDisabled(
+      userData.email !== "" && userData.fullName !== "" ? false : true
+    );
+  }, [userData]);
 
   return (
     <ContactSection id="contact">
@@ -128,40 +154,39 @@ export default function ContactUs() {
           hesitate to use the form and I'll try my best to get back to you !
         </ProjectsText>
       </ContactTextSection>
-      <Form id="contactForm" method="POST">
+      <Form
+        id="contactForm"
+        method="POST"
+        onSubmit={(e) => {
+          handleSubmit(e);
+          handleForm();
+        }}
+      >
         <FormField
-          id="fullName"
           inputType="text"
           name="fullName"
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
           autocomplete="off"
-          tabIndex="1"
           required
-          onFocus={scroll}
         ></FormField>
         <FormField
-          id="email"
           inputType="email"
           name="email"
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
           autocomplete="off"
-          tabIndex="2"
           required
-          onFocus={scroll}
         ></FormField>
         <Message
-          id="message"
           name="message"
           value={userData.message}
+          onChange={handleChange}
           placeholder="Leave your message"
-          tabIndex="3"
-          onFocus={scroll}
         ></Message>
-        <SubmitBtn form="contactForm" type="submit">
+        <SubmitBtn form="contactForm" type="submit" disabled={disabled}>
           get in touch
         </SubmitBtn>
       </Form>
