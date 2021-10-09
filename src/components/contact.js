@@ -154,12 +154,7 @@ export default function ContactUs() {
   };
 
   $("input").on("focus", function () {
-    $("html, body").animate(
-      {
-        scrollTop: $(this).offset().top + "px",
-      },
-      "fast"
-    );
+    $(window).scrollTop(this.getBoundingClientRect().top - 10);
   });
 
   return (
