@@ -177,7 +177,7 @@ export default function ContactUs() {
           value={userData.fullName}
           onChange={handleChange}
           placeholder="Name"
-          onFocus={() => (document.body.scrollTop = $(this).offset().top)}
+          onFocus={() => scroll.scrollMore(200)}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -188,7 +188,7 @@ export default function ContactUs() {
           value={userData.email}
           onChange={handleChange}
           placeholder="Email"
-          onFocus={() => (document.body.scrollTop = $(this).offset().top)}
+          onFocus={() => scroll.scrollMore(250)}
           onBlur={scrollToNext}
           required
           autoComplete="off"
@@ -197,7 +197,7 @@ export default function ContactUs() {
           name="message"
           value={userData.message}
           onChange={handleChange}
-          onFocus={() => (document.body.scrollTop = $(this).offset().top)}
+          onFocus={() => scroll.scrollMore(300)}
           onBlur={scrollToNext}
           placeholder="Leave your message"
         ></Message>
