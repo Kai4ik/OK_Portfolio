@@ -248,7 +248,7 @@ export default function Projects() {
           done during my co-op term and some just to practice new things I
           learned.
         </ProjectsText>
-        {width < 768 && (
+        {width <= 768 && (
           <ProjectShowcase>
             <Swiper
               pagination={true}

@@ -105,6 +105,7 @@ const InduceText = styled.div`
 
 export default function AboutMe() {
   const width = window.innerWidth;
+  const height = window.innerHeight;
 
   return (
     <AboutSection id="aboutMe">
@@ -138,7 +139,7 @@ export default function AboutMe() {
         <LazyLoadImage
           alt="Photo of me"
           src={MyPhoto}
-          width={width > 768 ? "50%" : "150%"}
+          width={width > 768 ? "50%" : height > 1000 ? "100%" : "150%"}
           height="100%"
         />
       </About>

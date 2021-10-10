@@ -130,7 +130,6 @@ export default function ContactUs() {
     message: "",
   });
   const scroll = Scroll.animateScroll;
-
   const width = window.innerWidth;
 
   const handleChange = (event) => {
