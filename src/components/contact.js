@@ -66,7 +66,7 @@ const FormField = styled.input.attrs((props) => ({
   color: #ccd6f6 !important;
   font-size: 1.4rem;
   margin-bottom: 4vh;
-  transition: border 0.5s linear;
+  transition: border 0.2s linear;
   &:focus,
   &:active {
     border: 1px solid #ccd6f6;
@@ -86,6 +86,7 @@ const Message = styled.textarea`
   color: #ccd6f6;
   font-size: 1.4rem;
   resize: none;
+  transition: border 0.2s linear;
   &:focus,
   &:active {
     border: 1px solid #ccd6f6;
