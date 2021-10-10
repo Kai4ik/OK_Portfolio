@@ -147,7 +147,8 @@ SwiperCore.use([Pagination]);
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(0);
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   const projects = [
     {

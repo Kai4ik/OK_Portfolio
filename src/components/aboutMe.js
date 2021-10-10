@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faSmileWink } from "@fortawesome/free-solid-svg-icons";
@@ -104,7 +104,8 @@ const InduceText = styled.div`
 `;
 
 export default function AboutMe() {
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
   const height = window.innerHeight;
 
   return (
@@ -139,7 +140,7 @@ export default function AboutMe() {
         <LazyLoadImage
           alt="Photo of me"
           src={MyPhoto}
-          width={width > 768 ? "50%" : height > 1000 ? "100%" : "150%"}
+          width={width > 768 ? "50%" : height > 700 ? "100%" : "150%"}
           height="100%"
         />
       </About>

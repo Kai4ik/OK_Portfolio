@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.scss";
 import BurgerMenu from "./components/burgerMenu";
 import TopNavigation from "./components/topNavigation";
@@ -13,7 +14,8 @@ import { LazyLoadComponent } from "react-lazy-load-image-component";
 import { Helmet } from "react-helmet";
 
 function App() {
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   return (
     <div className="App">

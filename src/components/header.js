@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Particles from "react-particles-js";
 
@@ -31,7 +31,8 @@ const MobileFlex = styled.div`
 `;
 
 export default function Header() {
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   return (
     <HeaderSection>

@@ -131,7 +131,8 @@ export default function ContactUs() {
     message: "",
   });
   const scroll = Scroll.animateScroll;
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   const handleChange = (event) => {
     console.log(state);
