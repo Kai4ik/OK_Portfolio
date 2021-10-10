@@ -31,6 +31,7 @@ function App() {
           name="keywords"
           content="HTML5, CSS3, JavaScript, React, Node.js, JavaScript, MongoDB"
         />
+
         <meta name="author" content="Kairat Orozobekov" />
       </Helmet>
       <Header></Header>
