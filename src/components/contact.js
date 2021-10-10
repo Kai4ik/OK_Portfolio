@@ -8,6 +8,9 @@ const ContactSection = styled.div`
   width: 80vw;
   min-height: 50vh;
   margin: 5vh 10vw;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    flex-direction: column;
+  }
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -21,6 +24,10 @@ const ContactTextSection = styled.div`
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   padding-left: 5rem;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    width: 100%;
+    padding-left: 0;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding-left: 0;
@@ -32,6 +39,9 @@ const ContactSectionTitle = styled.h3`
   font-weight: 700;
   color: #f4b301;
   margin-bottom: 4vh;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    margin-bottom: 2vh;
+  }
 `;
 
 const ProjectsText = styled.div`
@@ -46,6 +56,13 @@ const Form = styled.form`
   min-height: 50vh;
   padding: 0 5vw;
   animation-play-state: running;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    width: 100%;
+    padding: 0;
+    align-items: center;
+    margin-top: 5vh;
+  }
+
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 0;

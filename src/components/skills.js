@@ -6,6 +6,10 @@ const SkillsSection = styled.div`
   flex-direction: column;
   margin: 10vh 15vw;
   width: 70vw;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    margin: 5vh 10vw;
+    width: 80vw;
+  }
   @media only screen and (max-width: 768px) {
     margin: 2vh 10vw 6vh 10vw;
     width: 80vw;

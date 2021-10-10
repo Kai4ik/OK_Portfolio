@@ -6,6 +6,9 @@ const HeaderSection = styled.section`
   height: 85vh;
   overflow: hidden;
   position: relative;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    height: 60vh;
+  }
   @media only screen and (max-width: 768px) {
     height: 80vh;
   }
@@ -28,15 +31,22 @@ const MobileFlex = styled.div`
   justify-content: center;
   align-items: center;
   height: 85vh;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    height: 60vh;
+  }
 `;
 
 export default function Header() {
   const [width, setWidth] = useState(window.innerWidth);
-  window.addEventListener("resize", () => setWidth(window.innerWidth));
+  const [height, setHeight] = useState(window.innerHeight);
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  });
 
   return (
     <HeaderSection>
-      {width > 768 ? (
+      {width > 768 && height < 1300 ? (
         <div id="particle-slider">
           <div className="slides">
             <div
@@ -50,7 +60,7 @@ export default function Header() {
       ) : (
         <MobileFlex>
           <Particles
-            height="700px"
+            height={height > 1300 ? "900px" : "700px"}
             params={{
               particles: {
                 number: {

@@ -22,6 +22,9 @@ const LogoSection = styled.div`
   width: 65%;
   height: 100%;
   z-index: 3;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    width: 50%;
+  }
   @media only screen and (max-width: 768px) {
     width: 85%;
   }

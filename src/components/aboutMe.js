@@ -45,6 +45,9 @@ const About = styled.section`
   display: flex;
   width: 80vw;
   margin: 0 10vw;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    align-items: center;
+  }
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -59,6 +62,9 @@ const AboutTextSection = styled.div`
   flex-direction: column;
   width: 60%;
   padding: 4rem 5rem;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    padding: 2rem 0 0 0;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 2rem 1rem 0 1rem;

@@ -18,6 +18,11 @@ const ProjectsSection = styled.div`
   display: flex;
   width: 80vw;
   margin: 20vh 10vw 10vh 10vw;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    margin: 8vh 5vw 4vh 5vw;
+    width: 90vw;
+    flex-direction: column;
+  }
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     margin: 2vh 10vw 5vh 10vw;
@@ -41,6 +46,9 @@ const ProjectShowcase = styled.div`
   width: 60%;
   padding: 5rem 0rem;
   overflow-x: hidden;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    width: 100%;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -71,6 +79,10 @@ const ProjectsTextSection = styled.div`
   color: #ccd6f6;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    width: 100%;
+    margin-top: 4vh;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -97,6 +109,9 @@ const ProjectTechnologies = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait), {
+    justify-content: center;
+  }
   @media only screen and (max-width: 768px) {
     justify-content: center;
   }
@@ -131,6 +146,9 @@ const LinkBtn = styled.a`
   &:hover {
     background: #ccd6f6;
     opacity: 0.8;
+  }
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    width: 20vw;
   }
   @media only screen and (max-width: 768px) {
     width: 35vw;
