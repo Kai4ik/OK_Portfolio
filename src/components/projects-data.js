@@ -11,6 +11,7 @@ import wildfire_mobile from "../images/wildfire_mobile.png";
 
 const projectsData = [
   {
+    id: "ee99d6ff-a70f-4026-bf13-1b120972fd54",
     name: "THC Solutions",
     githubLink: null,
     websiteLink: "https://thcsolutions.online/",
@@ -34,6 +35,7 @@ const projectsData = [
     imageDesktop: thc_desktop,
   },
   {
+    id: "6194d233-cb1f-453a-9586-e0708eaff662",
     name: "Shoppingify",
     githubLink: "https://github.com/Kai4ik/Shoppingify",
     websiteLink: "https://shoppingifyapp.herokuapp.com/",
@@ -56,6 +58,7 @@ const projectsData = [
     imageDesktop: shoppingify_desktop,
   },
   {
+    id: "b08cb9f3-8648-405d-b2bc-30a00776a04e",
     name: "Wildfire Tracker",
     githubLink: "https://github.com/Kai4ik/wildfireTracker",
     websiteLink: "https://wildfire-tracking-app.netlify.app/",
@@ -72,6 +75,7 @@ const projectsData = [
     imageDesktop: wildfire_desktop,
   },
   {
+    id: "6481af5a-4ad8-44ab-8cdc-46ffc56189bf",
     name: "Simple Music App",
     githubLink: "https://github.com/Kai4ik/Simple_Music_App",
     websiteLink: "https://simple-music-web-app.netlify.app/",
@@ -82,6 +86,7 @@ const projectsData = [
     imageDesktop: sma_desktop,
   },
   {
+    id: "374f5d0e-2427-4d72-b7a8-d066a92a5091",
     name: "Omnifood",
     githubLink: "https://github.com/Kai4ik/Omnifood",
     websiteLink: "https://omniwebsite.netlify.app/",

@@ -172,7 +172,7 @@ export default function Projects() {
             onSlideChange={(swiper) => setActiveProject(swiper.activeIndex)}
           >
             {projects.map((project) => (
-              <SwiperSlide>
+              <SwiperSlide key={project.id}>
                 <ProjectImages>
                   <LazyLoadImage alt="" src={project.imageMobile} width="25%" />
                   <LazyLoadImage
@@ -201,7 +201,7 @@ export default function Projects() {
               onSlideChange={(swiper) => setActiveProject(swiper.activeIndex)}
             >
               {projects.map((project) => (
-                <SwiperSlide>
+                <SwiperSlide key={project.id}>
                   <ProjectImages>
                     <LazyLoadImage
                       alt=""
@@ -224,8 +224,8 @@ export default function Projects() {
           {projects[activeProject].description}
         </ProjectDescription>
         <ProjectTechnologies>
-          {projects[activeProject].technologiesUsed.map((technology) => (
-            <Technology>{technology}</Technology>
+          {projects[activeProject].technologiesUsed.map((technology, index) => (
+            <Technology key={index}>{technology}</Technology>
           ))}
         </ProjectTechnologies>
         <ProjectLinks>
