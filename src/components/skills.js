@@ -39,7 +39,8 @@ const SkillsSectionMain = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8vw;
+  row-gap: 100px;
+  column-gap: 100px;
   @media only screen and (max-width: 768px) {
     gap: 6vw;
   }
