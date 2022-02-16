@@ -82,6 +82,7 @@ export default function Skills() {
     { image: "devicon-mongodb-plain", name: "MongoDB", color: "#4DB33D" },
     { image: "devicon-postgresql-plain", name: "PostgreSQL", color: "#336791" },
     { image: "devicon-mysql-plain", name: "MySQL", color: "#F29011" },
+    { image: "devicon-firebase-plain", name: "Firebase", color: "#FEC107" },
     { image: "devicon-sequelize-plain", name: "Sequelize", color: "#03AFEF" },
     { image: "devicon-jquery-plain", name: "jQuery", color: "#0868AC" },
     { image: "devicon-sass-original", name: "Sass", color: "#CC6699" },
