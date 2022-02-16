@@ -107,8 +107,8 @@ const ProjectTechnologies = styled.div`
   margin: 5vh 0;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 20px;
-  row-gap: 30px;
+  row-gap: 20px;
+  column-gap: 30px;
   @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait), {
     justify-content: center;
   }
@@ -119,6 +119,11 @@ const ProjectTechnologies = styled.div`
 
 const Technology = styled.p`
   height: 20px;
+  @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
+    @media {
+      margin-right: 20px;
+    }
+  }
 `;
 
 const ProjectLinks = styled.div`
