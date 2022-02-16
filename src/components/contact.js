@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { useForm } from "@formspree/react";
 import * as Scroll from "react-scroll";
 
+// firebase config for analytics
+import analytics from "../firebase/config";
+
+// used to log events that provide insights on what's happening on web app
+import { logEvent } from "firebase/analytics";
+
 const ContactSection = styled.div`
   display: flex;
   width: 80vw;
@@ -164,6 +170,7 @@ export default function ContactUs() {
       fullName: "",
       message: "",
     };
+    logEvent(analytics, "Contact form submitted");
     setUserData(newUser);
   };
 

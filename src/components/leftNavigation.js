@@ -8,6 +8,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { NavSection, VerticalArrow } from "./reusableElements";
 
+// firebase config for analytics
+import analytics from "../firebase/config";
+
+// used to log events that provide insights on what's happening on web app
+import { logEvent } from "firebase/analytics";
+
 const Icon = styled.a`
   margin-bottom: 20px;
   cursor: pointer;
@@ -24,6 +30,7 @@ export default function LeftNavigation() {
         hoverColor="#2B3137"
         href="https://github.com/Kai4ik"
         target="blank"
+        onClick={() => logEvent(analytics, "Github link clicked")}
       >
         <FontAwesomeIcon icon={faGithub} />
       </Icon>
@@ -31,6 +38,7 @@ export default function LeftNavigation() {
         hoverColor="#D62976"
         href="https://www.instagram.com/egoist.ko/"
         target="blank"
+        onClick={() => logEvent(analytics, "IG link clicked")}
       >
         <FontAwesomeIcon icon={faInstagram} />
       </Icon>
@@ -38,6 +46,7 @@ export default function LeftNavigation() {
         hoverColor="#0077B5"
         href="https://www.linkedin.com/in/kai-orozobekov/"
         target="blank"
+        onClick={() => logEvent(analytics, "Linkedin link clicked")}
       >
         <FontAwesomeIcon icon={faLinkedinIn} />
       </Icon>

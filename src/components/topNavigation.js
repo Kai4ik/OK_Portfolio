@@ -4,6 +4,9 @@ import { Link } from "react-scroll";
 import logo from "../images/OK_LOGO.png";
 import ResumePdf from "../files/Resume.pdf";
 
+import analytics from "../firebase/config";
+import { logEvent } from "firebase/analytics";
+
 const NavSection = styled.div`
   display: flex;
   align-items: center;
@@ -78,19 +81,41 @@ export default function TopNavigation() {
         <Logo src={logo} alt="my logo" />
       </LogoSection>
       <MenuOptions>
-        <Link to="aboutMe" smooth={true}>
+        <Link
+          to="aboutMe"
+          smooth={true}
+          onClick={() => logEvent(analytics, "about button clicked")}
+        >
           <Option> about </Option>
         </Link>
-        <Link to="skills" smooth={true} offset={-100}>
+        <Link
+          to="skills"
+          smooth={true}
+          offset={-100}
+          onClick={() => logEvent(analytics, "skills button clicked")}
+        >
           <Option> skills </Option>
         </Link>
-        <Link to="work" smooth={true} offset={-100}>
+        <Link
+          to="work"
+          smooth={true}
+          offset={-100}
+          onClick={() => logEvent(analytics, "work button clicked")}
+        >
           <Option> work </Option>
         </Link>
-        <Link to="contact" smooth={true}>
+        <Link
+          to="contact"
+          smooth={true}
+          onClick={() => logEvent(analytics, "contact button clicked")}
+        >
           <Option> contact </Option>
         </Link>
-        <Resume href={ResumePdf} target="blank">
+        <Resume
+          href={ResumePdf}
+          target="blank"
+          onClick={() => logEvent(analytics, "resume view button clicked")}
+        >
           resume
         </Resume>
       </MenuOptions>

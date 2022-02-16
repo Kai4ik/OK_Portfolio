@@ -7,6 +7,12 @@ import "swiper/components/pagination/pagination.scss";
 import ProjectsData from "./projects-data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+// firebase config for analytics
+import analytics from "../firebase/config";
+
+// used to log events that provide insights on what's happening on web app
+import { logEvent } from "firebase/analytics";
+
 const ProjectsSection = styled.div`
   display: flex;
   width: 80vw;
@@ -162,6 +168,11 @@ export default function Projects() {
   window.addEventListener("resize", () => setWidth(window.innerWidth));
   const projects = ProjectsData;
 
+  const handleSlideChange = (swiper) => {
+    setActiveProject(swiper.activeIndex);
+    logEvent(analytics, "Project viewed");
+  };
+
   return (
     <ProjectsSection id="work">
       {width > 768 && (
@@ -169,7 +180,7 @@ export default function Projects() {
           <Swiper
             pagination={true}
             className="mySwiper"
-            onSlideChange={(swiper) => setActiveProject(swiper.activeIndex)}
+            onSlideChange={(swiper) => handleSlideChange(swiper)}
           >
             {projects.map((project) => (
               <SwiperSlide key={project.id}>

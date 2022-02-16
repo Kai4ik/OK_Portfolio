@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { NavSection, VerticalArrow } from "./reusableElements";
 
+import analytics from "../firebase/config";
+import { logEvent } from "firebase/analytics";
+
 const Email = styled.a`
   width: 100%;
   display: flex;
@@ -21,7 +24,10 @@ const Email = styled.a`
 export default function RightNavigation() {
   return (
     <NavSection right="0">
-      <Email href="mailto:orozobekov.kai@gmail.com">
+      <Email
+        href="mailto:orozobekov.kai@gmail.com"
+        onClick={() => logEvent(analytics, "Email link clicked")}
+      >
         orozobekov.kai@gmail.com
       </Email>
       <VerticalArrow lineHeight="28vh"></VerticalArrow>
