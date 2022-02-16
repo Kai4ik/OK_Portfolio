@@ -98,7 +98,7 @@ export default function Skills() {
       </SkillsParagraph>
       <SkillsSectionMain>
         {skillsArray.map((skill, index) => (
-          <SkillIcon color={skill.color} key={`${skill}${index}`}>
+          <SkillIcon id="skill" color={skill.color} key={`${skill}${index}`}>
             <i className={skill.image}></i>
             <SkillName> {skill.name}</SkillName>
           </SkillIcon>
