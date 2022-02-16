@@ -119,11 +119,6 @@ const ProjectTechnologies = styled.div`
 
 const Technology = styled.p`
   height: 20px;
-  @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
-    @media {
-      margin-right: 20px;
-    }
-  }
 `;
 
 const ProjectLinks = styled.div`
@@ -242,7 +237,9 @@ export default function Projects() {
         </ProjectDescription>
         <ProjectTechnologies>
           {projects[activeProject].technologiesUsed.map((technology, index) => (
-            <Technology key={index}>{technology}</Technology>
+            <Technology id="technology" key={index}>
+              {technology}
+            </Technology>
           ))}
         </ProjectTechnologies>
         <ProjectLinks>

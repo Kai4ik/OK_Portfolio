@@ -65,3 +65,11 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #ccd6f6;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    #technology {
+      margin-right: 20px;
+    }
+  }
+}
