@@ -171,7 +171,7 @@ export default function Projects() {
 
   const handleSlideChange = (swiper) => {
     setActiveProject(swiper.activeIndex);
-    logEvent(analytics, "Project viewed");
+    logEvent(analytics, "project_slide", { slide: "changed" });
   };
 
   return (
@@ -244,11 +244,23 @@ export default function Projects() {
         </ProjectTechnologies>
         <ProjectLinks>
           {projects[activeProject].githubLink && (
-            <LinkBtn href={projects[activeProject].githubLink} target="blank">
+            <LinkBtn
+              href={projects[activeProject].githubLink}
+              target="blank"
+              onClick={() =>
+                logEvent(analytics, "github", { github_link: "clicked" })
+              }
+            >
               Review code
             </LinkBtn>
           )}
-          <LinkBtn href={projects[activeProject].websiteLink} target="blank">
+          <LinkBtn
+            href={projects[activeProject].websiteLink}
+            target="blank"
+            onClick={() =>
+              logEvent(analytics, "project", { project_link: "clicked" })
+            }
+          >
             Visit site
           </LinkBtn>
         </ProjectLinks>

@@ -12,13 +12,10 @@ import ContactUs from "./components/contact";
 import Footer from "./components/footer";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 import { Helmet } from "react-helmet";
-import analytics from "./firebase/config";
-import { logEvent } from "firebase/analytics";
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   window.addEventListener("resize", () => setWidth(window.innerWidth));
-  logEvent(analytics, "Page visit");
 
   return (
     <div className="App">

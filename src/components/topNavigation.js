@@ -84,7 +84,9 @@ export default function TopNavigation() {
         <Link
           to="aboutMe"
           smooth={true}
-          onClick={() => logEvent(analytics, "about button clicked")}
+          onClick={() =>
+            logEvent(analytics, "nav_button", { menu_button: "clicked" })
+          }
         >
           <Option> about </Option>
         </Link>
@@ -92,7 +94,9 @@ export default function TopNavigation() {
           to="skills"
           smooth={true}
           offset={-100}
-          onClick={() => logEvent(analytics, "skills button clicked")}
+          onClick={() =>
+            logEvent(analytics, "nav_button", { menu_button: "clicked" })
+          }
         >
           <Option> skills </Option>
         </Link>
@@ -100,21 +104,27 @@ export default function TopNavigation() {
           to="work"
           smooth={true}
           offset={-100}
-          onClick={() => logEvent(analytics, "work button clicked")}
+          onClick={() =>
+            logEvent(analytics, "nav_button", { menu_button: "clicked" })
+          }
         >
           <Option> work </Option>
         </Link>
         <Link
           to="contact"
           smooth={true}
-          onClick={() => logEvent(analytics, "contact button clicked")}
+          onClick={() =>
+            logEvent(analytics, "nav_button", { menu_button: "clicked" })
+          }
         >
           <Option> contact </Option>
         </Link>
         <Resume
           href={ResumePdf}
           target="blank"
-          onClick={() => logEvent(analytics, "resume view button clicked")}
+          onClick={() =>
+            logEvent(analytics, "resume", { resume_link: "clicked" })
+          }
         >
           resume
         </Resume>

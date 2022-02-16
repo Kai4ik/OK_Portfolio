@@ -37,28 +37,34 @@ export default function Footer() {
       <Icon
         href="https://github.com/Kai4ik"
         target="blank"
-        onClick={logEvent(analytics, "GitHub link clicked")}
+        onClick={() =>
+          logEvent(analytics, "github", { github_link: "clicked" })
+        }
       >
         <FontAwesomeIcon icon={faGithub} />
       </Icon>
       <Icon
         href="https://www.instagram.com/egoist.ko/"
         target="blank"
-        onClick={logEvent(analytics, "IG link clicked")}
+        onClick={() =>
+          logEvent(analytics, "instagram", { instagram_link: "clicked" })
+        }
       >
         <FontAwesomeIcon icon={faInstagram} />
       </Icon>
       <Icon
         href="https://www.linkedin.com/in/kai-orozobekov/"
         target="blank"
-        onClick={logEvent(analytics, "Linkedin link clicked")}
+        onClick={() =>
+          logEvent(analytics, "linkedin", { linkedin_link: "clicked" })
+        }
       >
         <FontAwesomeIcon icon={faLinkedinIn} />
       </Icon>
       <Icon
         href="mailto:orozobekov.kai@gmail.com"
         target="blank"
-        onClick={logEvent(analytics, "Email link clicked")}
+        onClick={() => logEvent(analytics, "email", { open_email: "clicked" })}
       >
         <FontAwesomeIcon icon={faEnvelope} />
       </Icon>

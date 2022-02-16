@@ -6,6 +6,12 @@ import MyPhoto from "../images/MyPhoto2.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-scroll";
 
+// firebase config for analytics
+import analytics from "../firebase/config";
+
+// used to log events that provide insights on what's happening on web app
+import { logEvent } from "firebase/analytics";
+
 const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -117,7 +123,11 @@ export default function AboutMe() {
   return (
     <AboutSection id="aboutMe">
       <Link to="work" smooth={true} offset={-100}>
-        <ViewWork>
+        <ViewWork
+          onClick={() =>
+            logEvent(analytics, "view_work", { button: "clicked" })
+          }
+        >
           <ViewWorkText> View my work </ViewWorkText>
           <FontAwesomeIcon icon={faArrowRight} />
         </ViewWork>

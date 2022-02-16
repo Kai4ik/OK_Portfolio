@@ -30,7 +30,9 @@ export default function LeftNavigation() {
         hoverColor="#2B3137"
         href="https://github.com/Kai4ik"
         target="blank"
-        onClick={() => logEvent(analytics, "Github link clicked")}
+        onClick={() =>
+          logEvent(analytics, "github", { github_link: "clicked" })
+        }
       >
         <FontAwesomeIcon icon={faGithub} />
       </Icon>
@@ -38,7 +40,9 @@ export default function LeftNavigation() {
         hoverColor="#D62976"
         href="https://www.instagram.com/egoist.ko/"
         target="blank"
-        onClick={() => logEvent(analytics, "IG link clicked")}
+        onClick={() =>
+          logEvent(analytics, "instagram", { instagram_link: "clicked" })
+        }
       >
         <FontAwesomeIcon icon={faInstagram} />
       </Icon>
@@ -46,7 +50,9 @@ export default function LeftNavigation() {
         hoverColor="#0077B5"
         href="https://www.linkedin.com/in/kai-orozobekov/"
         target="blank"
-        onClick={() => logEvent(analytics, "Linkedin link clicked")}
+        onClick={() =>
+          logEvent(analytics, "linkedin", { linkedin_link: "clicked" })
+        }
       >
         <FontAwesomeIcon icon={faLinkedinIn} />
       </Icon>

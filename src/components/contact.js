@@ -170,7 +170,7 @@ export default function ContactUs() {
       fullName: "",
       message: "",
     };
-    logEvent(analytics, "Contact form submitted");
+    logEvent(analytics, "contact", { form: "submitted" });
     setUserData(newUser);
   };
 

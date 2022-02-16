@@ -26,7 +26,7 @@ export default function RightNavigation() {
     <NavSection right="0">
       <Email
         href="mailto:orozobekov.kai@gmail.com"
-        onClick={() => logEvent(analytics, "Email link clicked")}
+        onClick={() => logEvent(analytics, "email", { open_email: "clicked" })}
       >
         orozobekov.kai@gmail.com
       </Email>
