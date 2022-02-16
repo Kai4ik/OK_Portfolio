@@ -66,6 +66,7 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+// styles only for Safari browser
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     #technology {
@@ -74,7 +75,7 @@ input:-webkit-autofill:active {
     }
 
     #skill {
-      margin-right: 100px;
+      margin: 0 50px;
       margin-bottom: 40px;
     }
   }
