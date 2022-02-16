@@ -6,6 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.scss";
 import ProjectsData from "./projects-data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import parse from "html-react-parser";
 
 // firebase config for analytics
 import analytics from "../firebase/config";
@@ -233,7 +234,7 @@ export default function Projects() {
         )}
         <ProjectName> {projects[activeProject].name}</ProjectName>
         <ProjectDescription>
-          {projects[activeProject].description}
+          {parse(projects[activeProject].description)}
         </ProjectDescription>
         <ProjectTechnologies>
           {projects[activeProject].technologiesUsed.map((technology, index) => (
