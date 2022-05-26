@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from "swiper/core";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.scss";
-import ProjectsData from "./projects-data";
+import ProjectsData from "../data/projects-data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import parse from "html-react-parser";
 
@@ -44,7 +44,7 @@ const ProjectShowcase = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
-  padding: 5rem 0rem;
+  padding: 8rem 0rem 5rem 0rem;
   overflow-x: hidden;
   @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     width: 100%;
@@ -255,15 +255,17 @@ export default function Projects() {
               Review code
             </LinkBtn>
           )}
-          <LinkBtn
-            href={projects[activeProject].websiteLink}
-            target="blank"
-            onClick={() =>
-              logEvent(analytics, "project", { project_link: "clicked" })
-            }
-          >
-            Visit site
-          </LinkBtn>
+          {projects[activeProject].websiteLink && (
+            <LinkBtn
+              href={projects[activeProject].websiteLink}
+              target="blank"
+              onClick={() =>
+                logEvent(analytics, "project", { project_link: "clicked" })
+              }
+            >
+              Visit site
+            </LinkBtn>
+          )}
         </ProjectLinks>
       </ProjectsTextSection>
     </ProjectsSection>

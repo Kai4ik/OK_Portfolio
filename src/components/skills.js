@@ -76,6 +76,7 @@ export default function Skills() {
     { image: "devicon-javascript-plain", name: "JavaScript", color: "#F0DB4F" },
     { image: "devicon-react-original", name: "React", color: "#61DBFB" },
     { image: "devicon-nodejs-plain", name: "Node.js", color: "#3C873A" },
+    { image: "devicon-nextjs-original", name: "Next.js", color: "#2D2D2D" },
     { image: "devicon-gatsby-plain", name: "Gatsby", color: "#663399" },
     { image: "devicon-redux-original", name: "Redux", color: "#764ABC" },
     { image: "devicon-express-original", name: "Express.js", color: "#828282" },

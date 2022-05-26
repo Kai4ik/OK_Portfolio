@@ -22,7 +22,7 @@ const NavSection = styled.div`
 `;
 
 const LogoSection = styled.div`
-  width: 65%;
+  width: 60%;
   height: 100%;
   z-index: 3;
   @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -41,7 +41,7 @@ const Logo = styled.img`
 const MenuOptions = styled.div`
   display: flex;
   align-items: center;
-  width: 35%;
+  width: 40%;
   height: 100%;
 `;
 
@@ -109,6 +109,16 @@ export default function TopNavigation() {
           }
         >
           <Option> work </Option>
+        </Link>
+        <Link
+          to="challenges"
+          smooth={true}
+          offset={-100}
+          onClick={() =>
+            logEvent(analytics, "nav_button", { menu_button: "clicked" })
+          }
+        >
+          <Option> challenges </Option>
         </Link>
         <Link
           to="contact"
