@@ -6,6 +6,7 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { FaDev } from "react-icons/fa";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 // firebase config for analytics
@@ -51,6 +52,15 @@ export default function Footer() {
         }
       >
         <FontAwesomeIcon icon={faInstagram} />
+      </Icon>
+      <Icon
+        hoverColor="#353A40"
+        href="https://dev.to/kairatorozobekov"
+        target="blank"
+        style={{ marginTop: "6px" }}
+        onClick={() => logEvent(analytics, "devto", { devto_link: "clicked" })}
+      >
+        <FaDev />
       </Icon>
       <Icon
         href="https://www.linkedin.com/in/kai-orozobekov/"

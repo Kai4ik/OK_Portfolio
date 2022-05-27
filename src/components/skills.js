@@ -85,6 +85,12 @@ export default function Skills() {
     { image: "devicon-mysql-plain", name: "MySQL", color: "#F29011" },
     { image: "devicon-firebase-plain", name: "Firebase", color: "#FEC107" },
     { image: "devicon-sequelize-plain", name: "Sequelize", color: "#03AFEF" },
+    { image: "devicon-babel-plain", name: "Babel", color: "#F9DC3E" },
+    {
+      image: "devicon-webpack-plain",
+      name: "Webpack",
+      color: "#1C78C0",
+    },
     { image: "devicon-jquery-plain", name: "jQuery", color: "#0868AC" },
     { image: "devicon-sass-original", name: "Sass", color: "#CC6699" },
     { image: "devicon-git-plain", name: "Git", color: "#F1502F" },

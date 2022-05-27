@@ -73,6 +73,7 @@ const projectsData = [
   {
     id: "29f48a5f-206b-4885-b605-178a29f69c68",
     name: "Unsplash",
+    websiteLink: "https://unsplash-web-gallery.vercel.app/",
     githubLink: "https://github.com/Kai4ik/unsplash",
     description:
       "Unsplash - photo gallery web application (Unsplash-inspired design) build with React and styled-components. <br /> Firebase Cloud storage is used to store photos that are uploaded by users. <br /> Firebase Cloud Firestore is used to store and query data about photos (image url (from Firebase storage), photo label, name of the user who uploaded the photo)",
@@ -92,7 +93,6 @@ const projectsData = [
     id: "b08cb9f3-8648-405d-b2bc-30a00776a04e",
     name: "Wildfire Tracker",
     githubLink: "https://github.com/Kai4ik/wildfireTracker",
-    websiteLink: "https://wildfire-tracking-app.netlify.app/",
     description:
       "Wildfire Tracker - React application that tracks and shows on the map locations of actively burning fires around the world. This application uses the NASA Open API (to fetch current natural events) and Google Maps API.  ",
     technologiesUsed: [

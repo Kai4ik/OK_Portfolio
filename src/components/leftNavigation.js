@@ -6,6 +6,8 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { FaDev } from "react-icons/fa";
+import { BsMedium } from "react-icons/bs";
 import { NavSection, VerticalArrow } from "./reusableElements";
 
 // firebase config for analytics
@@ -55,6 +57,24 @@ export default function LeftNavigation() {
         }
       >
         <FontAwesomeIcon icon={faLinkedinIn} />
+      </Icon>
+      <Icon
+        hoverColor="#353A40"
+        href="https://dev.to/kairatorozobekov"
+        target="blank"
+        onClick={() => logEvent(analytics, "devto", { devto_link: "clicked" })}
+      >
+        <FaDev />
+      </Icon>
+      <Icon
+        hoverColor="#FFC017"
+        href="https://medium.com/@kai4ik"
+        target="blank"
+        onClick={() =>
+          logEvent(analytics, "medium", { medium_link: "clicked" })
+        }
+      >
+        <BsMedium />
       </Icon>
       <VerticalArrow lineHeight="18vh"></VerticalArrow>
     </NavSection>
